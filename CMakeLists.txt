@@ -5,6 +5,8 @@ project(dvix_screensaver)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+
 set(SOURCES
     src/main.cpp
 )
@@ -12,3 +14,4 @@ set(SOURCES
 add_executable(dvix_screensaver ${SOURCES})
 
 target_include_directories(dvix_screensaver PUBLIC "${PROJECT_SOURCE_DIR}/src")
+target_link_libraries(dvix_screensaver sfml-graphics sfml-window sfml-system)
